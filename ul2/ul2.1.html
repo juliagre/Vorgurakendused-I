@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title> Teine praktikum ul. 2.1 </title>
+	<meta charset="utf-8" /> 
+	<link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body>
+<form method = "get">
+	<table>
+		<caption> GET </caption>
+		<tr >
+			<td>Nimi</td>
+			<td>
+				<input type="text" name="nimi" placeholder = "Sisesta nimi">
+			</td>
+		</tr>
+		<tr>
+			<td>Sugu</td>
+			<td><input type="radio" name="sugu" value="Naine"> Naine</br>
+				<input type="radio" name="sugu" value="Mees"> Mees</td>
+		</tr>
+		<tr>
+			<td>Vanus</td>
+			<td><input type="number" name="vanus" min="0"></td>
+		</tr>
+		<tr>
+			<td>Veebilehekülg</td>
+			<td> <input type="url" name="vl"> </td>
+		</tr>
+		<tr>
+			<td>E-mail</td>
+			<td><input type="email" name="email" placeholder = "Sisesta e-posti aadress"></td>
+		</tr>
+		<tr>
+			<td>Telefoni number</td>
+			<td><input type="tel" name="telnum" placeholder = "Sisesta telefoni number"></td>
+		
+	</table>
+	<input type="submit" value="Submit">
+</form>
+</body>
+</html>
