@@ -13,7 +13,7 @@ h1 {
 .brdr{
 	border: solid; border-width:1px;
 }
-#link:hover {
+.link:hover {
 	border: solid; 
 	border-width:1px;
 	text-decoration: none;
