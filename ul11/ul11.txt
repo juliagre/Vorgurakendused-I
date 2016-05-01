@@ -1,0 +1,25 @@
+﻿Luua uus tabel 'loomaaed', kus on järgnevad väljad: 
+create table jgretsan.loomaaed(id integer primary key  not null auto_increment, 
+nimi varchar(30) not null, vanus integer, liik varchar(50), puur integer);
+
+Täita eelnevalt loodud tabel vähemalt 5 reaga. 
+insert into jgretsan_loomaaed (nimi, vanus, liik, puur) values 
+( 'Puhh', 1,' karu', 2), 
+('Bagheera', 13, 'leopard', 1), 
+('Valgekihv', 5, 'hunt', 3), 
+('Simba', 10, 'l?vi', 4), 
+('Chip', 2, 'vöötorav', 5),
+('Dale', 5,'vöötorav', 5),
+('Teddy', 30,' karu', 2);
+
+Hankida kõigi mingis ühes kindlas puuris elavate loomade nimi ja puuri number:
+select nimi, puur from jgretsan_loomaaed where puur = 2;
+
+Hankida vanima ja noorima looma vanused:
+select max(vanus), min(vanus) from jgretsan_loomaaed;
+
+hankida puuri number koos selles elavate loomade arvuga (vihjeks: group by ja count):
+select puur, count(*) from jgretsan_loomaaed group by puur;
+
+suurendada kõiki tabelis olevaid vanuseid 1 aasta võrra:
+UPDATE jgretsan_loomaaed  SET vanus=vanus+1;
