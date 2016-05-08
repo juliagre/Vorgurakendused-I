@@ -4,7 +4,7 @@ nimi varchar(30) not null, vanus integer, liik varchar(50), puur integer);
 
 Täita eelnevalt loodud tabel vähemalt 5 reaga. 
 insert into jgretsan_loomaaed (nimi, vanus, liik, puur) values 
-( 'Puhh', 1,' karu', 2), 
+('Puhh', 1,' karu', 2), 
 ('Bagheera', 13, 'leopard', 1), 
 ('Valgekihv', 5, 'hunt', 3), 
 ('Simba', 10, 'l?vi', 4), 
