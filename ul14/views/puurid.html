@@ -1,0 +1,13 @@
+<?php if (!empty($puurid)):
+	foreach($puurid as $id=>$loomarray):
+?>
+	<div>
+	<p>Puur <?php echo $id; ?></p>	
+	<?php foreach($loomarray as $id2=>$loom): ?>
+		<img src="<?php echo $loom["pilt"];?>" alt="<?php echo $loom["nimi"];?>" title="<?php echo $loom["nimi"];?>">
+	<?php endforeach; ?>
+	</div>
+<?php endforeach;
+endif;
+?>
+
