@@ -16,7 +16,7 @@ function logi(){
 	if(empty($_SESSION["user"])){
 		include_once('views/login.html');
 	} else {
-		header("Location: loomaaed.php?page=loomad");
+		header("Location: ?page=loomad");
 	}
 	
 	
@@ -32,18 +32,22 @@ function logi(){
 			global $connection;
 			$user = mysqli_real_escape_string($connection, $_POST["user"]);
 			$password = mysqli_real_escape_string($connection, $_POST["pass"]);
-			$query = "SELECT id FROM jgretsan_kylastajad WHERE username = '$user' and passw = SHA1('$password')";
+			$query = "SELECT id, roll FROM jgretsan_kylastajad WHERE username = '$user' and passw = SHA1('$password')";
 			$result = mysqli_query($connection, $query);
+			while($rida = mysqli_fetch_assoc($result)){
+				$roll = $rida["roll"];
+			}
 			$count = mysqli_num_rows($result);
 			if($count==1){
 				$_SESSION["user"] = $user;
-				header("location: loomaaed.php");
+				$_SESSION["roll"] = $roll;
+				header("location: ?page=loomad");
 			}
 			else {
 				$errors[] = "Wrong Username or Password";
 			}
-			}
-}
+		}
+	}
 	
 }
 
@@ -56,6 +60,9 @@ function logout(){
 
 function kuva_puurid(){
 	// siia on vaja funktsionaalsust
+	if(empty($_SESSION["user"])){
+		include_once('views/login.html');
+	} else {
 	global $connection;
 	$puurid = array();
 	$sql="SELECT DISTINCT puur FROM jgretsan_loomaaed ORDER BY puur ASC";
@@ -67,21 +74,50 @@ function kuva_puurid(){
 		}
 	}
 	include_once('views/puurid.html');
-	
+	}
 }
 
 function lisa(){
 	// siia on vaja funktsionaalsust (13. nädalal)
-	if(empty($_SESSION["user"])){
+	if(empty($_SESSION["user"]) && $_SESSION["roll"] != "admin"){
 		include_once('views/login.html');
 	} 
+	else if(!empty($_SESSION["user"]) && $_SESSION["roll"] != "admin"){
+		header("Location: ?page=loomad");
+	} else {
+	
+	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+		$errors = array();
+		if (!$_POST["nimi"]){
+			$errors[] = "Sisesta oma nimi!";
+			} 
+		if (!$_POST["puur"]) {
+			$errors[] = "Sisesta puuri number!";
+			} 
+		if (upload("liik") == "") {
+			$errors[] = "Sisesta !";
+			} 
+		if (empty($errors)){
+			global $connection;
+			$nimi = mysqli_real_escape_string($connection, $_POST["nimi"]);
+			$puur = mysqli_real_escape_string($connection, $_POST["puur"]);
+			$pilt = mysqli_real_escape_string($connection, upload("liik"));
+			mysqli_query($connection, "INSERT INTO jgretsan_loomaaed (nimi, puur, pilt) VALUES ('$nimi', '$puur', '$pilt')");
+			if (mysqli_insert_id($connection) > 0) {
+				header("Location: ?page=loomad");
+			} else include_once('views/loomavorm.html');
+			
+			}
+		
+		}
 	include_once('views/loomavorm.html');
+	}
 }
-
 function upload($name){
 	$allowedExts = array("jpg", "jpeg", "gif", "png");
 	$allowedTypes = array("image/gif", "image/jpeg", "image/png","image/pjpeg");
-	$extension = end(explode(".", $_FILES[$name]["name"]));
+	$tmp = explode('.', $_FILES[$name]["name"]);
+	$extension = end($tmp);
 
 	if ( in_array($_FILES[$name]["type"], $allowedTypes)
 		&& ($_FILES[$name]["size"] < 100000)
