@@ -1,0 +1,22 @@
+<div class = "naidud">
+	<?php date_default_timezone_set("Europe/Tallinn");?>
+	<?php $month = date("n");?>
+	<?php $year = date("Y");?>
+	<?php $deadline1 = mktime(0,0,0,$month,1,$year);?>
+	<?php $deadline4 = mktime(0,0,0,$month,4,$year);?>
+    <?php  $current  = time();?>
+	<?php if($current > $deadline4): ?>
+		<div style="color:red;"><?php echo "Naitude esitamise tahtaeg on moodunud"; ?></div>
+	<?php else: ?>
+		<form  action="?page=lisa" method="POST" enctype="multipart/form-data">
+			<label>Vesi:</label><input type="number" step="any" min=0 name="vesi"  /><br/>
+			<label>Gaas:</label><input type="number" step="any" min=0 name="gaas"  /><br/>
+			<input type="submit" value="Sisesta"/> 
+		</form>
+  <?php endif;?>
+<?php if (isset($errors)):?>
+		<?php foreach($errors as $error):?>
+			<div style="color:red;"><?php echo htmlspecialchars($error); ?></div>
+		<?php endforeach;?>
+	<?php endif;?>
+</div>

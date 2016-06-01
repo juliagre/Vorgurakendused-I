@@ -1,0 +1,22 @@
+﻿<div class = "naidud">
+	<?php date_default_timezone_set("Europe/Tallinn");?>
+	<?php $month = date("n");?>
+	<?php $year = date("Y");?>
+	<?php $deadline1 = mktime(0,0,0,$month,1,$year);?>
+	<?php $deadline4 = mktime(0,0,0,$month,4,$year);?>
+    <?php  $current  = time();?>
+	<?php if($current < $deadline4): ?>
+		<div style="color:red;"><?php echo "Veel käib näitude esitamine"; ?></div>
+	<?php else: ?>
+		<form  action="?page=arve" method="POST" enctype="multipart/form-data">
+			<label>Vee hind :</label><input type="number" step="any" min=0 name="vesihind"  /><br/>
+			<label>Gaasi hind:</label><input type="number" step="any" min=0 name="gaashind"  /><br/>
+			<input type="submit" value="Sisesta"/> 
+		</form>
+  <?php endif;?>
+<?php if (isset($errors)):?>
+		<?php foreach($errors as $error):?>
+			<div style="color:red;"><?php echo htmlspecialchars($error); ?></div>
+		<?php endforeach;?>
+	<?php endif;?>
+</div>

@@ -1,0 +1,21 @@
+﻿<div class = "ajalugu">
+<?php if(mysqli_num_rows($result)==0): ?>
+    Andmed puuduvad
+<?php else: ?>
+ <table>
+	<tr> <th>Vesi</th> <th>Gaas</th><th>Kuupäev</th><th>Vee maksumus</th><th>Gaasi maksumus</th></tr>
+     <?php while($rida = mysqli_fetch_assoc($result)) { ?>
+		<tr>
+			<td><?php echo htmlspecialchars($rida['vesi']); ?></td>
+			<td><?php echo htmlspecialchars($rida['gaas']); ?></td>
+			<td><?php echo htmlspecialchars($rida['kuupäev']); ?></td>
+			<td><?php echo htmlspecialchars($rida['veehind']); ?></td>
+			<td><?php echo htmlspecialchars($rida['gaasihind']); ?></td>
+		</tr>
+     <?php } ?>
+   </table>
+<?php endif; ?>
+</div>
+
+
+

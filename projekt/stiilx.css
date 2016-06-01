@@ -1,0 +1,169 @@
+body {
+	background: white;
+	padding: 0;
+	margin:0;
+}
+
+#wrap{	
+	width: 100%;
+	font-family: 'Tahoma', 'Lucida Grande', Verdana, Arial, sans-serif;
+	color: #333;
+  	height:auto;
+ 	margin: 0 auto;
+ 	position: relative;
+}
+
+.banner{
+	top:0;
+	background-color: #31A3DD;	
+	width: 100%;
+	height: 150px;
+	position: relative;
+}
+
+.bannerlogo {
+	position:absolute;
+	top:0;
+	bottom:0;
+	float: left;
+	left: 2%;
+	margin:auto;	
+}
+.emailwrap{
+	position:relative;
+	top: 13px;
+	float: right;
+	right: 30px;
+	height: 25px;
+}
+
+.emaillogo {	
+ 	vertical-align: middle;
+}
+
+
+#menu{	
+	position: absolute;
+	padding: 0px;
+	width: 183px;
+	height:auto; 
+	overflow: auto;
+	top: 150px;
+}
+
+#menu li {
+	border-bottom: 1px solid #fff;
+	margin: 0;
+	list-style: none;
+}
+#menu li a {
+	display: block;
+	padding: 5px 5px 5px 5px;
+	border-left: solid #90bade;
+	border-right:solid #90bade;
+	background-color: #2175bc;
+	color: #fff;
+	text-decoration: none;
+	
+}
+#menu li a:hover {
+	background: #31A3DD;
+	color: black;
+}
+#tekst{
+	position: relative;
+	top:160px;
+  	height: auto; 
+  	width: 50%;
+	margin: 0 auto 0 auto;
+}
+#login{ 
+	position: relative;
+	top:150px;
+  	height: auto; 
+  	width: 300px;
+	margin: 0 auto 0 auto;
+}
+#login h3 {
+  	border-bottom: 2px solid #2175bc;
+  	color: #2175bc;
+  	display: block;
+  	font: 'Tahoma', 'Lucida Grande', Verdana, Arial, sans-serif; 
+  	margin: 0;
+  	text-align: center;
+}
+input[type=text], input[type=password] {
+	display: block;
+	margin: 5px auto -20px auto;	
+	border: 1px solid;
+  	height: 18px;
+  	width: 240px; 	
+	text-align: center;
+}
+input[type="submit"] {
+	display:block;
+  	width:300px;
+  	height:35px;
+  	font: 'Tahoma', 'Lucida Grande', Verdana, Arial, sans-serif; 
+  	font-size: 14px;
+  	font-weight: bold;
+  	color: #fff;
+  	text-align: center;
+  	padding: 5px 5px 5px 5px;
+  	margin: 5px auto 5px auto;
+  	background-color: #2175bc;
+	cursor:pointer;
+}
+.naidud{
+	position: relative;
+	top: 160px;
+  	height: auto; 
+  	width: 300px;
+	margin: 0 auto 0 auto;
+}
+.ajalugu{
+	position: relative;
+	top:150px;
+  	height: auto; 
+  	width: 50%;
+	margin: 0 auto 0 auto;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    text-align: right;
+	margin: auto;
+}
+input[name="vesi"],  input[name="gaas"] {
+ 	display: block;
+ 	float: right;
+	margin: auto;	
+} 
+input[name="vesihind"], input[name="gaashind"] {
+ 	display: block;
+ 	float: right;
+	margin: auto;	
+} 
+table {
+    border-collapse: collapse;
+	font-family: 'Tahoma', 'Lucida Grande', Verdana, Arial, sans-serif; 
+	color:	#333;
+}
+
+table, th, td {
+    border: 1px solid black;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-left: 5px;
+	text-align: center;
+	
+}
+td:empty{
+    background-color: #ee98a6;
+}
+.clear {
+	clear:both;
+}
+

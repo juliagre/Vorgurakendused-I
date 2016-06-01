@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Piiri 2</title>
+	<link rel="stylesheet" type="text/css" href="stiilx.css">
+</head>
+<body>
+
+<div id="wrap">
+	<div  class = "banner"> 
+	<a href="?page=tekst">
+		<img class = "bannerlogo" src = "logo2.png" alt="logo"/> 
+	</a>
+	<div class = "emailwrap">
+		<a href="mailto:piiri2@piiri2ku.ee">
+		<img class = "emaillogo" src = "email.png" alt="email"/> 
+		</a>
+	</div>
+	<ul id="menu">
+		<li><a href="?page=tekst">Pealeht</a></li>
+		<?php if(isset($_SESSION['user']) && $_SESSION["roll"] != "admin"): ?>
+			<li><a href="?page=nait">Ajalugu</a></li>
+			<li><a href="?page=lisa">Näitude sisestamine</a></li>
+			<li><a href="?page=logout">Logi välja</a></li>
+		<?php elseif(isset($_SESSION['user']) && $_SESSION["roll"] == "admin"): ?>
+			<li><a href="?page=kontroll">Kontroll</a></li>
+			<li><a href="?page=arve">Arve</a></li>
+			<li><a href="?page=logout">Logi välja</a></li>
+		<?php else: ?>
+			<li><a href="?page=login">Logi sisse</a></li>
+		<?php endif; ?>
+	</ul>
+	<div id="content">
+		
+
