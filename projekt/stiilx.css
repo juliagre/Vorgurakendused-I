@@ -48,7 +48,7 @@ body {
 	width: 183px;
 	height:auto; 
 	overflow: auto;
-	top: 150px;
+	margin: 155px 0;
 }
 
 #menu li {
@@ -72,10 +72,9 @@ body {
 }
 #tekst{
 	position: relative;
-	top:160px;
-  	height: auto; 
+	top: 155px;
   	width: 50%;
-	margin: 0 auto 0 auto;
+	margin: 0 auto;
 }
 #login{ 
 	position: relative;
@@ -115,30 +114,25 @@ input[type="submit"] {
 	cursor:pointer;
 }
 .naidud{
-	position: relative;
-	top: 160px;
-  	height: auto; 
-  	width: 300px;
-	margin: 0 auto 0 auto;
+	position: absolute;
+	top: 155px;
+	margin: 0 30%;
 }
 .ajalugu{
-	position: relative;
-	top:150px;
+	position: absolute;
   	height: auto; 
-  	width: 50%;
-	margin: 0 auto 0 auto;
+	top: 155px;
+	margin: 0 30%;
 }
 
 label{
     display: inline-block;
     float: left;
     text-align: right;
-	margin: auto;
 }
 input[name="vesi"],  input[name="gaas"] {
  	display: block;
- 	float: right;
-	margin: auto;	
+ 	float: right;	
 } 
 input[name="vesihind"], input[name="gaashind"] {
  	display: block;
