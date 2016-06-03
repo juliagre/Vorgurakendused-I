@@ -33,7 +33,7 @@ switch($page){
 		lisa();
 	break;
 	default:
-		include_once('views/tekst.html');
+		header("location: ?page=tekst");
 	break;
 }
 

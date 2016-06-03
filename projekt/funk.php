@@ -53,6 +53,7 @@ function logi(){
 function logout(){
 	$_SESSION=array();
 	unset($_SESSION['user']);
+	unset($_SESSION['roll']);
 	session_destroy();
 	header("Location: ?");
 }
