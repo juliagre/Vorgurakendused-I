@@ -1,0 +1,9 @@
+﻿1)Peamine viga - unustatakse kasutaja input'i valideerida:
+nt. 1) if($result){
+		$_SESSION["user"] = $_POST["user"]; ....
+		
+	2) ...
+		$kasutajanimi = $_POST['kasutajanimi'];
+		$parool = $_POST['parool']; ...
+2) Üks inimene kasutas mysqli_error funktsiooni, tänu sellele võib häkker informatsiooni saada sellest, kuidas nt andmebaas töötab.
+3) Tundub, et kui on võimalik registreerida kaks inimest, nii et nendel oleks üks ja sama kasutajanimi ei ole ka väga turvaline.
