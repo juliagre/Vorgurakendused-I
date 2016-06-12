@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Eksam</title>
+</head>
+<body>
+
+
+<form action="?page=tagasiside" method="POST">
+<table class="center">
+		<caption>Palume sinu tagasisidet</caption>
+		<tr>
+			<th>
+				Lehekülg
+			</th></tr><tr>
+			<td>
+			 Hinne: <input type="range" name="points" min="0" max="5">
+			</td>				
+		</tr>
+		<tr>
+			<td colspan="2">
+			 <button type="submit" align=center>Saada</button>
+			 	</td>
+		</tr>
+		</table>
+
+</div>
+</body>
