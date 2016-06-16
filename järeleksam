@@ -17,12 +17,14 @@
 	$db="test";
 	$connection = mysqli_connect($host, $user, $pass, $db) or die("ei saa ühendust mootoriga- ".mysqli_error());
 	mysqli_query($connection, "SET CHARACTER SET UTF8") or die("Ei saanud baasi utf-8-sse - ".mysqli_error($connection));
+	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if(!empty($_POST["text"])){
 		$tekst = mysqli_real_escape_string($connection,$_POST["text"]);
 		$sql = mysqli_query($connection, "INSERT INTO jgretsan_markmed (markmed) VALUES ('$tekst')");
 		} else {
 			echo "Sisesta sõnum!";
 			}
+	}
 	$result = mysqli_query($connection, "SELECT * FROM `jgretsan_markmed`");
 	while($rida = mysqli_fetch_assoc($result)){
 			$naita = $rida["markmed"];
