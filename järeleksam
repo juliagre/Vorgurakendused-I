@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Eksam </title>
+	<meta charset="utf-8" /> 
+</head>
+<body>
+	<form method="POST" action="">
+        <textarea name="text" placeholder="Märkmed"></textarea>
+		<br/>
+		<input type="submit" name="submit" value="Esita" />        
+	</form>
+<?php
+	$host="localhost";
+	$user="test";
+	$pass="t3st3r123";
+	$db="test";
+	$connection = mysqli_connect($host, $user, $pass, $db) or die("ei saa ühendust mootoriga- ".mysqli_error());
+	mysqli_query($connection, "SET CHARACTER SET UTF8") or die("Ei saanud baasi utf-8-sse - ".mysqli_error($connection));
+	if(!empty($_POST["text"])){
+		$tekst = mysqli_real_escape_string($connection,$_POST["text"]);
+		$sql = mysqli_query($connection, "INSERT INTO jgretsan_markmed (markmed) VALUES ('$tekst')");
+		} else {
+			echo "Sisesta sõnum!";
+			}
+	$result = mysqli_query($connection, "SELECT * FROM `jgretsan_markmed`");
+	while($rida = mysqli_fetch_assoc($result)){
+			$naita = $rida["markmed"];
+			echo '<form action="" method="POST">';
+			echo 'Markmed: <br/><textarea name="edit">' .$naita .'</textarea><br />';
+			echo '<input type="submit" value="Muuta" />';
+			echo '</form>';
+		}
+	if($_POST["edit"]){
+		$tekst2 = mysqli_real_escape_string($connection,$_POST["edit"]);
+		//$sql2 = mysqli_query($connection, "UPDATE jgretsan_markmed SET markmed = $tekst2 WHERE markmed = mysqli_query);
+
+			}
+		
+
+?>	
+	
+</body>
+</html> 
