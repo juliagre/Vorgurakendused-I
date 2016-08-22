@@ -1,0 +1,51 @@
+textarea{
+	width: 400px;
+	height: 100px;
+	background-color: #fff;
+	resize: none;
+}
+
+button{
+	//background-color: green;
+}
+
+.commentstyle{
+	
+	width: 406px;
+	position: relative;
+}
+	
+.kasutajanimi{
+	font-size:14px;
+	font-weight: bold;
+}
+
+.kuupaev{
+	font-size: 10px;
+	margin-top: -13px;
+}
+
+.sonum{
+	font-size: 14px;
+	border-bottom: 1px solid #d3d3d3;
+}
+.edit{
+	position: absolute;
+	top: 22px;
+	right: 0px;
+}
+.delete{
+	
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+.delete button{
+	background-color: transparent;
+	border: 1px solid #d3d3d3;
+}
+.edit button{
+	width: 56px;
+	background-color: transparent;
+	border: 1px solid #d3d3d3;
+}
