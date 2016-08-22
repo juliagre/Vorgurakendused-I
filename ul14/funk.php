@@ -102,7 +102,7 @@ function lisa(){
 			$nimi = mysqli_real_escape_string($connection, $_POST["nimi"]);
 			$puur = mysqli_real_escape_string($connection, $_POST["puur"]);
 			$pilt = mysqli_real_escape_string($connection, upload("liik"));
-			mysqli_query($connection, "INSERT INTO jgretsan_loomaaed (nimi, puur, pilt) VALUES ('$nimi', '$puur', '$pilt')");
+			mysqli_query($connection, "INSERT INTO jgretsan_elanikud (nimi, puur, pilt) VALUES ('$nimi', '$puur', '$pilt')");
 			if (mysqli_insert_id($connection) > 0) {
 				header("Location: ?page=loomad");
 			} else include_once('views/loomavorm.html');

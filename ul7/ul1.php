@@ -16,7 +16,7 @@ function mirror($muutuja) {
 }
 mirror($_GET["message"]);
 ?>
-<pr> Peegelpilt: <?php echo $returnMessage; ?></pr> 
+<p> Peegelpilt: <?php echo $returnMessage; ?></p> 
 
 </body>
 </html> 
